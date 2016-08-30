@@ -1,0 +1,30 @@
+<?php
+
+/**
+ * @file
+ *  Displays form with different forum taxonomies wrappers and children associated to them.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function forum_migrate_menu() {
+  $menu['forum_migrate/remove'] = array(
+    'title' => 'All forum categories',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('forum_migrate_form'),
+    'access arguments' => array('administer users'),
+    'file' => 'includes/form.inc',
+    'file path' => drupal_get_path('module', 'forum_migrate')
+  );
+  $menu['forum_migrate/remove/confirm'] = array(
+    'title' => 'Remove forum categories and content',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('forum_migrate_remove_confirm_form'),
+    'access arguments' => array('administer users'),
+    'file' => 'includes/form.inc',
+    'file path' => drupal_get_path('module', 'forum_migrate')
+  );
+
+  return $menu;
+}

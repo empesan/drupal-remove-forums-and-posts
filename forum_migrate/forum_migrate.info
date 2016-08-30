@@ -1,0 +1,6 @@
+name = Forum Migrate
+description = "Temporary module to manage forum deletions in migration process"
+version = 1.0
+core = 7.x
+package = TTHH
+
